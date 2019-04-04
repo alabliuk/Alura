@@ -39,11 +39,11 @@
             android:max="10"
             android:numStars="5" />
 
-        <Button
-            android:id="@+id/formulario_salvar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Salvar" />
+        <!--<Button-->
+            <!--android:id="@+id/formulario_salvar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Salvar" />-->
 
     </LinearLayout>
 </ScrollView>
