@@ -1,6 +1,8 @@
 package com.example.agenda;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.agenda.dao.AlunoDAO;
 import com.example.agenda.modelo.Aluno;
+
+import java.io.File;
 
 public class FormularioActivity extends AppCompatActivity {
 
@@ -31,6 +35,20 @@ public class FormularioActivity extends AppCompatActivity {
         if (aluno != null) {
             helper.preencheFormulario(aluno);
         }
+
+        //Função de camera
+        Button botaoFoto = findViewById(R.id.formulario_botao_foto);
+        botaoFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentcamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                //> getExternalFilesDir = retorna o caminho da pasta da aplicação
+                String caminhoFoto = getExternalFilesDir(null) + "/" + System.currentTimeMillis() + ".jpg";
+                File arquivoFoto = new File(caminhoFoto);
+                intentcamera.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(arquivoFoto));
+                startActivity(intentcamera);
+            }
+        });
     }
 
     @Override
