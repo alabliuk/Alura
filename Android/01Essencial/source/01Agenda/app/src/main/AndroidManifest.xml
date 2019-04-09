@@ -3,6 +3,7 @@
     package="com.example.agenda">
 
     <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".receiver.SMSReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
+            </intent-filter>
+        </receiver>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
