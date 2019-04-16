@@ -92,7 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(this, json, Toast.LENGTH_LONG).show();
 
-                //Toast.makeText(this, "Enviando notas...", Toast.LENGTH_LONG).show();
+                WebClient client = new WebClient();
+                String resposta = client.post(json);
+
+                Toast.makeText(this, resposta, Toast.LENGTH_LONG).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
