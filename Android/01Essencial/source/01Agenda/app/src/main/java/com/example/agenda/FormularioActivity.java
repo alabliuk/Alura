@@ -2,11 +2,7 @@ package com.example.agenda;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,15 +11,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.agenda.dao.AlunoDAO;
 import com.example.agenda.modelo.Aluno;
 
 import java.io.File;
-import java.util.BitSet;
 
 public class FormularioActivity extends AppCompatActivity {
 
@@ -82,7 +75,7 @@ public class FormularioActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
+        inflater.inflate(R.menu.menu_formulario, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
