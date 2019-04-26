@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetalhesProvaActivity"></activity>
+        <activity android:name=".ProvasTabletActivity"></activity>
+        <activity android:name=".DetalhesProvaActivity" />
         <activity android:name=".ProvasActivity" />
         <activity android:name=".FormularioActivity" />
         <activity android:name=".MainActivity">
