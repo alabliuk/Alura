@@ -73,18 +73,7 @@ namespace Alura.ListaLeitura.WebApp.Controllers
 
             return model.ToModel();
         }
-
-        [HttpGet]
-        public IActionResult DetalhesSemHtml(int id)
-        {
-            var model = _repo.Find(id);
-            if (model == null)
-            {
-                return NotFound();
-            }
-            return Json(model.ToModel());
-        }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Detalhes(LivroUpload model)
