@@ -34,6 +34,6 @@ namespace Alura.ListaLeitura.Modelos
     public class ListaLeitura
     {
         public string Tipo { get; set; }
-        public IEnumerable<LivroApi> Livros { get; set; }
+        public IEnumerable<Livro> Livros { get; set; }
     }
 }
