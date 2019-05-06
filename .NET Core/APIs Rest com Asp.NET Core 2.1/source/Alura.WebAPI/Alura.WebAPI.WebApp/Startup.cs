@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Alura.WebAPI.WebApp.Formatters;
 
 namespace Alura.ListaLeitura.WebApp
 {
@@ -21,11 +22,13 @@ namespace Alura.ListaLeitura.WebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LeituraContext>(options => {
+            services.AddDbContext<LeituraContext>(options =>
+            {
                 options.UseSqlServer(Configuration.GetConnectionString("ListaLeitura"));
             });
 
-            services.AddDbContext<AuthDbContext>(options => {
+            services.AddDbContext<AuthDbContext>(options =>
+            {
                 options.UseSqlServer(Configuration.GetConnectionString("AuthDB"));
             });
 
@@ -37,13 +40,17 @@ namespace Alura.ListaLeitura.WebApp
                 options.Password.RequireLowercase = false;
             }).AddEntityFrameworkStores<AuthDbContext>();
 
-            services.ConfigureApplicationCookie(options => {
+            services.ConfigureApplicationCookie(options =>
+            {
                 options.LoginPath = "/Usuario/Login";
             });
 
             services.AddTransient<IRepository<Livro>, RepositorioBaseEF<Livro>>();
 
-            services.AddMvc().AddXmlSerializerFormatters();
+            services.AddMvc(options =>
+            {
+                options.OutputFormatters.Add(new LivroCsvFormatter());
+            }).AddXmlSerializerFormatters();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
