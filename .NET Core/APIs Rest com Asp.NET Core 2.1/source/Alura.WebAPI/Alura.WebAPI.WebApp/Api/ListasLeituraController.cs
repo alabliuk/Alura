@@ -8,7 +8,6 @@ using Lista = Alura.ListaLeitura.Modelos.ListaLeitura;
 
 namespace Alura.WebAPI.WebApp.Api
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ListasLeituraController : ControllerBase
@@ -46,6 +45,13 @@ namespace Alura.WebAPI.WebApp.Api
         [HttpGet("{tipo}")]
         public IActionResult Recuperar(TipoListaLeitura tipo)
         {
+            var header = this.HttpContext.Request.Headers;
+
+            if(!header.ContainsKey("Authorization") || !(header["Authorization"] == "123"))
+            {
+                return StatusCode(401);
+            }
+
             var lista = CriaLista(tipo);
             return Ok(lista);
         }

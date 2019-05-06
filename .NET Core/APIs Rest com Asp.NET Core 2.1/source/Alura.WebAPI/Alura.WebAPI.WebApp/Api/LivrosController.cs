@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Alura.WebAPI.WebApp.Api
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class LivrosController : ControllerBase
