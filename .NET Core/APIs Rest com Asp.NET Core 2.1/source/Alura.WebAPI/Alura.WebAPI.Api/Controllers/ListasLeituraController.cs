@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Lista = Alura.ListaLeitura.Modelos.ListaLeitura;
 
-namespace Alura.WebAPI.WebApp.Api
+namespace Alura.ListaLeitura.Api.Controllers
 {
     [Authorize]
     [ApiController]
