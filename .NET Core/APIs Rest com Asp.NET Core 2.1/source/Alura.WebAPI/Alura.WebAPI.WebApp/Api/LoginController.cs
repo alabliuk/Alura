@@ -11,7 +11,7 @@ namespace Alura.WebAPI.WebApp.Api
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class LoginController : Controller
+    public class LoginController : ControllerBase
     {
         private readonly SignInManager<Usuario> _signInManager;
 
@@ -40,7 +40,7 @@ namespace Alura.WebAPI.WebApp.Api
                     var credenciais = new SigningCredentials(chave, SecurityAlgorithms.HmacSha256);
 
                     var token = new JwtSecurityToken(
-                        issuer: "Alura.Web.App",
+                        issuer: "Alura.WebApp",
                         audience: "Postman",
                         claims: direitos,
                         signingCredentials: credenciais,
