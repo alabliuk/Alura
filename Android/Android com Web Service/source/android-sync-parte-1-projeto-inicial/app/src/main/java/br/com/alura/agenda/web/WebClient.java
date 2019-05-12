@@ -18,11 +18,6 @@ public class WebClient {
         return realizaConexao(json, endereco);
     }
 
-    public String insere(String json) {
-        String endereco = "http://192.168.0.187:8080/api/aluno";
-        return realizaConexao(json, endereco);
-    }
-
     @Nullable
     private String realizaConexao(String json, String endereco) {
         try {
