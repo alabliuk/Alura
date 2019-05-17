@@ -154,4 +154,8 @@ public class AlunoDAO extends SQLiteOpenHelper {
         c.close();
         return resultados > 0;
     }
+
+    public void insere(List<Aluno> alunos) {
+        
+    }
 }
