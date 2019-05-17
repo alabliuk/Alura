@@ -18,7 +18,9 @@ public class RetrofitInicializador {
         OkHttpClient.Builder client = new OkHttpClient.Builder();
         client.addInterceptor(interceptor);
 
-        retrofit = new Retrofit.Builder().baseUrl("http://192.168.0.187:8080/api/")
+        retrofit = new Retrofit.Builder()
+                //.baseUrl("http://192.168.0.187:8080/api/")    //DELL VOSTRO
+                .baseUrl("http://10.225.14.106:8080/api/")      //DELL LATITUDE
                 .addConverterFactory(JacksonConverterFactory.create())
                 .client(client.build())
                 .build();
