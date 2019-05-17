@@ -83,7 +83,7 @@ public class FormularioActivity extends AppCompatActivity {
                 if (aluno.getId() != null) {
                     dao.altera(aluno);
                 } else {
-                    dao.insere(aluno);
+                    dao.sincroniza(aluno);
                 }
                 dao.close();
 

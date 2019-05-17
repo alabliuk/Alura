@@ -65,7 +65,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
         AlunoDAO dao = new AlunoDAO(this);
         List<Aluno> alunos = dao.buscaAlunos();
 
-        for(Aluno aluno : alunos) {
+        for (Aluno aluno : alunos) {
             Log.i("idAluno:", String.valueOf(aluno.getId()));
         }
 
@@ -87,11 +87,12 @@ public class ListaAlunosActivity extends AppCompatActivity {
                 List<Aluno> alunos = response.body();
                 AlunoDAO dao = new AlunoDAO(ListaAlunosActivity.this);
                 dao.insere(alunos);
+                dao.close();
             }
 
             @Override
             public void onFailure(Call<List<Aluno>> call, Throwable t) {
-
+                Log.e("onFailure chamado", t.getMessage());
             }
         });
 
