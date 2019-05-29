@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Alura Viagens</string>
+    <!--<string name="app_name">Alura Viagens</string>-->
+    <string name="app_name">Viagens</string>
 </resources>
