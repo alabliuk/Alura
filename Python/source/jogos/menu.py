@@ -1,5 +1,6 @@
-import forca
 import adivinhacao
+import forca
+
 
 def escolhe_jogo():
     print("================================")
