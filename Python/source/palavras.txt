@@ -4,3 +4,16 @@ melancia
 morango
 pessego
 jaboticaba
+jaca
+manga
+melao
+abacate
+abacaxi
+acerola
+amora
+cereja
+goiaba
+laranja
+limao
+maracuja
+pitanga
