@@ -35,6 +35,7 @@ def jogar():
         imprime_mensagem_perdedor(palavra_secreta)
 
     print("Fim de jogo")
+    input()
 
 
 def imprime_mensagem_abertura():
