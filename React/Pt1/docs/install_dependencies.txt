@@ -1,0 +1,4 @@
+-- install jquery (Instalar na pasta cdc-admin)
+npm install jquery --save
+
+C:\zGitHub\Alura\React\Pt1\source\cdc-admin>npm install jquery --save
