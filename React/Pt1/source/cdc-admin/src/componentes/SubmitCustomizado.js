@@ -9,4 +9,4 @@ export default class SubmitCustomizado extends Component {
             </div>
         );
     }
-}   
+}
