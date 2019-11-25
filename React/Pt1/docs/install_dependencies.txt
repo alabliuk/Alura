@@ -1,4 +1,8 @@
--- install jquery (Instalar na pasta cdc-admin)
+# install jquery (Instalar na pasta cdc-admin)
 npm install jquery --save
 
-C:\zGitHub\Alura\React\Pt1\source\cdc-admin>npm install jquery --save
+
+# install PubSubJS (https://github.com/mroderick/PubSubJS)
+npm install pubsub-js --save 
+
+
