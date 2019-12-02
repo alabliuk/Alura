@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,7 +15,9 @@ import {
   Text,
   StatusBar,
   Image,
-  Dimensions
+  Dimensions,
+  ListView,
+  FlatList
 } from 'react-native';
 
 import {
@@ -31,19 +33,39 @@ const width = Dimensions.get('screen').width;
 
 const App: () => React$Node = () => {
   const fotos = [{ id: 1, usuario: 'arara' }
-    , { id: 2, usuario: 'papagaio' }];
+    , { id: 2, usuario: 'papagaio' }
+    , { id: 3, usuario: 'tucano' }];
 
   return (
-    <ScrollView>
-      {fotos.map(foto =>
-        <View key={foto.id}>
-          <Text>{foto.usuario}</Text>
+    <FlatList
+      data={fotos}
+      keyExtractor={item => String(item.id)}
+      renderItem={({ item }) =>
+        <View>
+          <View style={styles.cabecalho}>
+            <Image source={require('./resources/img/arara.jpg')}
+              style={styles.fotoDePerfil} />
+            <Text>{item.usuario}</Text>
+          </View>
+
           <Image source={require('./resources/img/arara.jpg')}
-            style={{ width: width, height: width }} />
+            style={styles.foto} />
         </View>
-      )}
-    </ScrollView>
+      }
+    />
   );
 };
+
+const styles = StyleSheet.create({
+  cabecalho: {
+    margin: 10, flexDirection: 'row', alignItems: 'center'
+  },
+  fotoDePerfil: {
+    marginRight: 10, borderRadius: 20, width: 40, height: 40
+  },
+  foto: {
+    width: width, height: width
+  }
+});
 
 export default App;
