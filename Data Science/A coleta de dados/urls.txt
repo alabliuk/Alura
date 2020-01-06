@@ -1,2 +1,5 @@
 Weather Underground
 https://www.wunderground.com/
+
+Download do database mongoDB já processado
+https://s3.amazonaws.com/caelum-online-public/787-data-science-coleta-de-dados/03/clima.bson
