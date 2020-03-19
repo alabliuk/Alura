@@ -1,5 +1,5 @@
 ## Diretório corrente 
-setwd("C:\\Users\\eduar\\OneDrive\\aBig Data\\aAlura\\R")
+setwd("C:\\zGitHub\\Alura\\Data Science\\O pipeline dos dados\\data")
 
 
 
