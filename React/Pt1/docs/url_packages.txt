@@ -1,4 +1,0 @@
-https://github.com/facebook/create-react-app
-
-https://purecss.io/
-
