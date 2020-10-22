@@ -17,7 +17,7 @@ namespace ByteBank.Funcionarios
         // override = modifica o comportamento do metodo da classe mae
         public override double GetBonificacao()
         {
-            return Salario + base.GetBonificacao();
+            return Salario + 0.5;
         }
     }
 }

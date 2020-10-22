@@ -7,33 +7,31 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+            CalcularBonificacao();
+        }
 
-            Funcionario carlos = new Funcionario(2000, "546.879.157-20");
-            carlos.Nome = "Carlos";
+        private static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
 
-            gerenciador.Registrar(carlos);
+            Funcionario pedro = new Designer("833.222.048-39");
+            pedro.Nome = "Pedro";
 
-            Console.WriteLine(Funcionario.TotalDeFuncionarios);
-            Console.WriteLine(carlos.Nome);
-            Console.WriteLine(carlos.GetBonificacao());
-
-            carlos.AumentarSalario();
-            Console.WriteLine("Novo salário do carlos " + carlos.Salario);
-
-            Diretor roberta = new Diretor("454.658.148-3");
+            Funcionario roberta = new Diretor("159.753.398-04");
             roberta.Nome = "Roberta";
 
-            gerenciador.Registrar(roberta);
+            Funcionario igor = new Auxiliar("981.198.778-53");
+            igor.Nome = "Igor";
 
-            Console.WriteLine(Funcionario.TotalDeFuncionarios);
-            Console.WriteLine(roberta.Nome);
-            Console.WriteLine(roberta.GetBonificacao());
+            Funcionario camila = new GerenteDeConta("326.985.628-89");
+            camila.Nome = "Camila";
 
-            roberta.AumentarSalario();
-            Console.WriteLine("Novo salário de Roberta " + roberta.Salario);
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(camila);
 
-            Console.WriteLine($"Total de bonificações: { gerenciador.GetTotalBonificacao() }");
+            Console.WriteLine($"Total de bonificações do mês {gerenciadorBonificacao.GetTotalBonificacao()}");
         }
     }
 }
