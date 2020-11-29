@@ -1,2 +1,5 @@
-let negociacao = new Negociacao(new Date(), 2, 100);
-console.log(negociacao);
+// app/ts/app.ts
+const controller = new NegociacaoController();
+document
+    .querySelector('.form')
+    .addEventListener('submit', controller.adiciona.bind(controller));
